@@ -5,11 +5,16 @@ on:
   push:
 
 jobs:
-  deploy:
+  download:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
 
-      - name: Deploy with sftp JavaScript
+      - name: Download invoice and send email
         run: ./congstar
+        env: # Or as an environment variable
+          CONGSTAR_USERNAME: ${{ secrets.CONGSTAR_USERNAME }}
+          CONGSTAR_PASSWORD: ${{ secrets.CONGSTAR_PASSWORD }}
+          SMTP_USERNAME: ${{ secrets.SMTP_USERNAME }}
+          SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
 
