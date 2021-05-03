@@ -69,4 +69,4 @@ def send_mail(send_from, send_to, subject, text, files=None, server="127.0.0.1")
     smtp.sendmail(send_from, send_to, msg.as_string())
     smtp.close()
 
-send_mail("congstar-api@leonard.io", ["mail@leonard.io"], "Monatliche Congstar-Rechnung", "Rechnung", files = [file_name], server = "in-v3.mailjet.com")
+send_mail("congstar-api@leonard.io", ["mail@leonard.io"], "Monatliche Telefonrechnung (Congstar)", "Rechnung", files = [file_name], server = "in-v3.mailjet.com")
